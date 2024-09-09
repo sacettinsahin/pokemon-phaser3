@@ -19,6 +19,8 @@ export class PreloadScene extends Phaser.Scene {
     console.log("init");
   }
   preload() {
+    console.log(`[${PreloadScene.name}:preload invoked] `)
+
     const monsterTamerAssetPath = "assets/images/monster-tamer";
     const kenneysAssetPath = "assets/images/kenneys-assets";
 
@@ -59,9 +61,8 @@ export class PreloadScene extends Phaser.Scene {
     );
   }
   create() {
-    this.add.image(0,0, BATTLE_BACKGROUND_ASSET_KEYS.FOREST).setOrigin(0,0)
+    console.log(`[${PreloadScene.name}:create invoked] `)
+    this.scene.start(SCENE_KEYS.BATTLE_SCENE)
   }
-//   update() {
-//     console.log("update");
-//   }
+
 }
